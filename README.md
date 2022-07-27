@@ -1,0 +1,1 @@
+docker run -p 80:80 -v PATH_PHP_FILES:/var/www/html mesompi2/apache-php7.4-oracle

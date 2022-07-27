@@ -23,17 +23,17 @@ RUN dpkg -i /tmp/oracle-instantclient12.1-basic_12.1.0.2.0-2_amd64.deb
 RUN dpkg -i /tmp/oracle-instantclient12.1-devel_12.1.0.2.0-2_amd64.deb
 RUN dpkg -i /tmp/oracle-instantclient12.1-sqlplus_12.1.0.2.0-2_amd64.deb
 
-# # Install PDO_OCI
-# RUN cd ~  \
-# && tar -jxvf php-7.4.30.tar.bz2 \
-# && cp -r php-7.4.30/ext/pdo_oci /tmp/ \
-# && cd /tmp/pdo_oci/ \
-# && phpize \
-# && ./configure --with-pdo-oci=instantclient,/usr/lib/oracle/12.1/client64/lib,12.1 \
-# && make \
-# && make install \
-# && echo 'extension=pdo_oci.so' > /etc/php/7.4/mods-available/pdo_oci.ini \
-# && ln -s /etc/php/7.4/mods-available/pdo_oci.ini /etc/php/7.4/apache2/conf.d/20-pdo_oci.ini
+# Install PDO_OCI
+RUN cd ~  \
+#&& tar -jxvf php-7.4.30.tar.bz2 \
+&& cp -r php-7.4.30/ext/pdo_oci /tmp/ \
+&& cd /tmp/pdo_oci/ \
+&& phpize \
+&& ./configure --with-pdo-oci=instantclient,/usr/lib/oracle/12.1/client64/lib,12.1 \
+&& make \
+&& make install \
+&& echo 'extension=pdo_oci.so' > /etc/php/7.4/mods-available/pdo_oci.ini \
+&& ln -s /etc/php/7.4/mods-available/pdo_oci.ini /etc/php/7.4/apache2/conf.d/20-pdo_oci.ini
 
 # Set up the Oracle environment variables
 ENV LD_LIBRARY_PATH /usr/lib/oracle/12.1/client64/lib/
