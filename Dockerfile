@@ -52,6 +52,8 @@ ENV APACHE_RUN_DIR=/var/run/apache2
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
 
+RUN a2enmod rewrite
+
 EXPOSE 80
 
 # Remove installation files
