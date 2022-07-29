@@ -13,7 +13,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Install Apache2 / PHP 7.4 & Co.
 RUN apt-get -y install apache2
-RUN apt-get -y install php7.4 libapache2-mod-php7.4 curl libaio1 php7.4-dev php7.4-xml git
+RUN apt-get -y install php7.4 libapache2-mod-php7.4 curl libaio1 php7.4-dev php7.4-pgsql php7.4-ldap php7.4-mbstring php7.4-intl php7.4-common php7.4-gd php7.4-json php7.4-xml php7.4-mysqlnd
 
 # Install the Oracle Instant Client
 ADD oracle/* /tmp/
