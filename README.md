@@ -1,3 +1,5 @@
+Description: a docker machine with oracle and php 7.4 configured.
+
 OS: UBUNTU 18.04
 
 PHP VERSION: 7.4
